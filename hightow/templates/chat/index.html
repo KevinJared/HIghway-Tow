@@ -1,0 +1,57 @@
+{% include '../base.html' %}
+{% block content%}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Favicon_Framasoft.svg/768px-Favicon_Framasoft.svg.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css" />
+</head>
+
+<body>
+
+  <section class="hero">
+    <div class="hero-body has-text-centered">
+
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="columns">
+        {% for room in rooms %}
+        <div class="column">
+          <div class="card rounded-edges">
+            <div class="card-content">
+              <p class="title is-4">{{room.name}}</p>
+              <div class="content">
+                <p>
+                  {{room.description}}
+                </p>
+                <a href="/rooms/{{room.slug}}" class="button" style="color:black;">Join Room</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+</body>
+<style>
+  .rounded-edges {
+    border-radius: 0.25rem;
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
+</style>
+
+</html>
+{% include "footer.html" %}
+{% endblock %}

@@ -1,0 +1,191 @@
+{% extends 'base.html' %}
+{%load bootstrap4%}
+
+{% block content%}
+{{block.super}}
+
+<html>
+
+<body>
+    <div class="jumbotron">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+            </ol>
+            <div class="carousel-inner" style="height:550px;  margin-top:0px;">
+                <div class="carousel-item active">
+                    <img class="d-block w-100" src="http://nebula.wsimg.com/2b13ebc7a31b146b2e4d665ff0a1ced4?AccessKeyId=DE7C670D659446FE4A2E&disposition=0&alloworigin=1"
+                        alt="First slide" style="z-index: 0;;">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="http://hertscartransport.co.uk/wp-content/uploads/2015/10/b3.jpg"
+                        alt="Second slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="http://hertscartransport.co.uk/wp-content/uploads/2017/02/banner-3.jpg"
+                        alt="Third slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src=" http://hertscartransport.co.uk/wp-content/uploads/2015/10/transport.jpg"
+                        alt="Fourth slide">
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid" style="padding-top: 70px;background-size: cover;background-repeat: no-repeat; width: 100%; background-image:url(https://ldi-admin-prod.statusnotquo.com/CMSPages/GetFile.aspx?guid=915d249c-1522-4602-b900-7d6a56d51cad)">
+        <div class="container" style="padding-bottom:60px;">
+            <div class="row">
+                <div class="col-md-2">
+
+                </div>
+                <div class="col-md-4" style="padding-top:50px; font-family: 'Raleway', sans-serif; line-height: 70px; text-align: justify; letter-spacing: 1px;">
+                    <div>
+                        <h5> We specialize in towing and recovery services and offer roadside assistance such as
+                            jumpstarts,
+                            lock outs, tire changes, and fuel deliveries. We know the importance of getting our
+                            customers
+                            vehicles back on the road. We are licensed, bonded and insured and are the best rotators
+                            around!</h5>
+                    </div>
+                    <br>
+                    <div>
+                        <a href="{%url 'all_rooms' %}" class="block">CHAT WITH AN ATTENDANT</a>
+                    </div>
+                    <div style="text-align:center;">
+                        <img src="https://i.pinimg.com/originals/98/5f/63/985f63e93046e99992ec2a1e7da9a874.gif" alt=""
+                            class="img-responsive" width="60%;">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div>
+                        <img src="https://png2.kisspng.com/20180403/iyw/kisspng-call-centre-customer-service-representative-call-center-5ac3d34a1393b4.3980577515227830500802.png"
+                            alt="" class="img-responsive" width="90%;" style="float: right;">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <div class="row" style="margin-bottom:10px;">
+                    <h1><strong style="font-size:20px;text-align:center;">Gallery</strong></h1>
+                </div>
+                <div id="gallery" class="row" style="margin-bottom:10px; border-top:2px solid rgb(228, 228, 228); padding-top:20px;">
+                    <div class="col-md-4" style="margin-bottom:10px;">
+                        <img src="https://www.stationtyres.com/images/offers/offer-03.jpg" alt="" class="img-responsive"
+                            width="100%;">
+                    </div>
+                    <div class="col-md-4" style="margin-bottom:10px;">
+                        <img src="http://www.readytowing.com.au/images/casestudy/category/6k69hwzzpd.jpg" alt="" class="img-responsive"
+                            width="100%;">
+                    </div>
+                    <div class="col-md-4" style="margin-bottom:10px;">
+                        <img src="https://www2.safetyserve.com/wp-content/uploads/2018/02/safety-serve-article-higway-breakdown.jpg"
+                            alt="" class="img-responsive" width="100%;">
+                    </div>
+                    <div class="col-md-4" style="margin-bottom:10px;">
+                        <img src="https://cdn.website.thryv.com/224fc725d91a4e62911e0691bcb1e3d4/MOBILE/png/270.png"
+                            alt="" class="img-responsive" width="100%;">
+                    </div>
+                    <div class="col-md-4" style="margin-bottom:10px;">
+                        <img src="http://24hourrecovery.co.uk/wp-content/uploads/2016/03/rec1-min.jpg" alt="" class="img-responsive"
+                            width="100%;">
+                    </div>
+                    <div class="col-md-4" style="margin-bottom:10px;">
+                        <img src="https://131tow.com.au/images/casestudy/category/zre8ap6auk.jpg" alt="" class="img-responsive"
+                            width="100%;">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+    </div>
+    </div>
+    <div id="testimonials-section" class="container-fluid text-center">
+        <div class="container">
+            <div class="">
+                <h1> What they said <strong>about us</strong> </h1>
+            </div>
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="container" id="testimonial" class="owl-carousel owl-theme">
+                        <div class=" item">
+                            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                                <ol class="carousel-indicators">
+                                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                                </ol>
+                                <div class="container carousel-inner">
+                                    <div class="carousel-item active">
+                                        <p>Curabitur malesuada lacus at purus pharetra, vitae egestas augue blandit.
+                                            Duis
+                                            feugiat vestibulum turpis, malesuada volutpat augue aliquet at. Vivamus
+                                            egestas
+                                            urna id eros tincidunt, in dictum enim tincidunt. Suspendisse vel
+                                            pellentesque
+                                            velit, non pretium erat. Ut commodo, arcu ac luctus pretium, ante est
+                                            hendrerit
+                                            risus, non efficitur odio nisl ac diam. Quisque vestibulum arcu tortor. Nam
+                                            suscipit nisl laoreet purus facilisis, vel tempus lacus pellentesque.</p>
+                                        <p><strong>Clint</strong>, Executive manager
+                                            , Company</p>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <p>Curabitur malesuada lacus at purus pharetra, vitae egestas augue blandit.
+                                            Duis
+                                            feugiat vestibulum turpis, malesuada volutpat augue aliquet at. Vivamus
+                                            egestas
+                                            urna id eros tincidunt, in dictum enim tincidunt. Suspendisse vel
+                                            pellentesque
+                                            velit, non pretium erat. Ut commodo, arcu ac luctus pretium, ante est
+                                            hendrerit
+                                            risus, non efficitur odio nisl ac diam. Quisque vestibulum arcu tortor. Nam
+                                            suscipit nisl laoreet purus facilisis, vel tempus lacus pellentesque.</p>
+                                        <p><strong>Clint</strong>, Executive manager
+                                            , Company</p>
+                                    </div>
+                                    <div class="carousel-item">
+                                        <p>Curabitur malesuada lacus at purus pharetra, vitae egestas augue blandit.
+                                            Duis
+                                            feugiat vestibulum turpis, malesuada volutpat augue aliquet at. Vivamus
+                                            egestas
+                                            urna id eros tincidunt, in dictum enim tincidunt. Suspendisse vel
+                                            pellentesque
+                                            velit, non pretium erat. Ut commodo, arcu ac luctus pretium, ante est
+                                            hendrerit
+                                            risus, non efficitur odio nisl ac diam. Quisque vestibulum arcu tortor. Nam
+                                            suscipit nisl laoreet purus facilisis, vel tempus lacus pellentesque.</p>
+                                        <p><strong>Clint</strong>, Executive manager
+                                            , Company</p>
+                                    </div>
+                                </div>
+                                <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+{% include "footer.html" %}
+{% endblock %}

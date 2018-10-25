@@ -1,0 +1,217 @@
+.jumbotron {
+    padding: 0px !important;
+    margin-bottom:0px !important;
+}
+
+.block {
+    display: block;
+    color: white;
+    width: 100%;
+    border: none;
+    background-color: rgb(55, 90, 247);
+    padding: 10px 24px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+}
+
+
+a:hover {
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.navigation {
+    width: 100%;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(55, 90, 247);
+    box-shadow: 0 4px 4px -3px #232323;
+    -moz-box-shadow: 0 4px 4px -3px #232323;
+    -webkit-box-shadow: 0 4px 4px -3px #232323;
+    padding-top: 2px;
+    font-family: "Lato", sans-serif;
+    position: fixed;
+}
+
+.navigation a {
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgba(219, 219, 219, 0.305);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    color: #050101;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: crimson;
+    text-decoration: none;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+    .sidenav a {
+        font-size: 18px;
+    }
+}
+
+.navigation a:hover {
+    color: crimson;
+    text-decoration: none;
+}
+
+.myFooter {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+footer {
+    background: rgb(55, 90, 247);
+    font-family: 'Raleway', sans-serif;
+    color: rgb(247, 247, 248);
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 300px;
+}
+
+.footer-icons {
+    text-align: center;
+    font-size: 20px;
+    letter-spacing: 5px;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    margin-top: 15px;
+}
+
+.footer-bottom {
+    text-align: center;
+    color: white;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:visited,
+a:focus {
+    color: white;
+}
+
+a:hover {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* testimonials section */
+#testimonials-section {
+    padding: 80px 0;
+    background: linear-gradient(rgb(0, 0, 0), rgba(0, 22, 37, 0.85)),
+        url(https://meral.ar-lab.ga/img/testimonials-bg.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    color: #a1aaad;
+}
+
+#testimonial {
+    padding: 30px 0;
+    text-align: center;
+}
+
+#testimonial .item {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+#testimonial .item p {
+    font-weight: 400;
+    margin: 0 0 30px 0;
+}
+
+#testimonials-section {
+    padding: 80px 0;
+    background: linear-gradient(rgb(0, 0, 0), rgba(0, 22, 37, 0.85)),
+        url(https://meral.ar-lab.ga/img/testimonials-bg.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    color: #a1aaad;
+}
+
+#testimonial {
+    padding: 30px 0;
+    text-align: center;
+}
+
+#testimonial .item {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+#testimonial .item p {
+    font-weight: 400;
+    margin: 0 0 30px 0;
+}
+
+/* enlarger */
+#gallery img{
+    /* filter: url(filters.svg#grayscale); Firefox 3.5+ */
+    filter: gray;
+    /* IE5+ */
+    -webkit-filter: grayscale(1);
+    /* Webkit Nightlies & Chrome Canary */
+    -webkit-transition: all 0.3s ease-in-out;
+}
+
+#gallery img:hover {
+    filter: none;
+    -webkit-filter: grayscale(0);
+    -webkit-transform: scale(1.01);
+}

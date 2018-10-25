@@ -1,0 +1,62 @@
+{% load static %}
+<!-- fonts -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+<!-- fonts -->
+
+<div class="navigation container-fluid">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="row">
+                <div class="col-md-3">
+                    <div id="mySidenav" class="sidenav">
+                        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                        <a href="/"><i class="glyphicon glyphicon-home"></i> HOME</a>
+                        <li class="dropdown-divider"></li>
+                        <a href="#"><i class="glyphicon glyphicon-king"></i> Companies</a>
+                        <li class="dropdown-divider"></li>
+                        <a href="#"><i class="glyphicon glyphicon-education"></i> Add Company</a>
+                        <li class="dropdown-divider"></li>
+                        <a href="#"><i class="glyphicon glyphicon-phone-alt"></i> Contact</a>
+                        <li class="dropdown-divider"></li>
+                        <li class="dropdown-divider"></li>
+                    </div>
+                    &nbsp; <span style="font-size:30px;cursor:pointer; color: white;" onclick="openNav()">&#9776;</span>
+                </div>
+                <div class="col-md-9" style="padding-top:10px;">
+                    <div class="row">
+                        <div class="col-md-2">
+
+                        </div>
+                        <div class="col-md-6" style="font-family: 'Montserrat', sans-serif;font-size: 20px; color: white; text-align: right;">
+                            <a href="/" style="font-size:20px; letter-spacing: 1px;"><strong>High</strong>Tow</a>
+                        </div>
+                        <div class="col-md-4">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4" style="text-align:right;padding-top:10px;">
+            <div class="row">
+                <div class="col-md-6" style="text-align: right;">
+                    <a href="" style="padding-right:20px;">About</a>
+                    <a href="" style="padding-right:20px;">Gallery</a>
+                    <a href="" style="">Contact</a>
+                </div>
+                <div class="col-md-6" style="padding-right: 30px;">
+                    {% if user.is_authenticated %}
+
+                    <a href="/logout">LOGOUT <span><i class="fa fa-sign-out"></i></span></a>
+
+                    {% else %}
+
+                    <a class='btn btn-default' href="/accounts/login">LOGIN /REGISTER</a>
+
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

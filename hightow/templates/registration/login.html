@@ -1,0 +1,44 @@
+{%extends "registration/base.html"%}
+{% load bootstrap4 %}
+{% block content %}
+<div class="container-fluid" style="font-family: 'Raleway', sans-serif;  padding-top:120px;">
+  <div class="container">
+    <!-- Empty div -->
+    <div class="row">
+      <div class="col-md-6"></div>
+      <div class="col-md-4">
+        {% if form.errors %}
+        <p> Password or Username is incorrect </p>
+        {% endif %}
+        <div class="panel panel-default" style="border:1px solid blueviolet; border-radius:5px;">
+
+          <div class="panel-heading" style="background-color:rgb(231, 231, 231);  padding:10px;">
+            <h5 class="text-center">Sign In</h5>
+          </div>
+          <div class="panel-body" style="padding:10px;">
+
+            <form action="/accounts/login/" method="post">
+              {% csrf_token %}
+              {% bootstrap_form form%}
+                <br>
+              <div class="form-group">
+                <input type="submit" class="block btn btn-primary btn-sm" value="Login">
+              </div>
+              <input type="hidden" name="next" value="{{next}}">
+            </form>
+            <a class="btn" href="/accounts/register" style="border:1px solid blueviolet;color:black;">REGISTER</a>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+    <!-- empty div -->
+    <div class="col-md-2"></div>
+  </div>
+  <div class="container-fluid">
+    <img src="" alt="" width="100%;">
+  </div>
+</div>
+
+{% endblock %}

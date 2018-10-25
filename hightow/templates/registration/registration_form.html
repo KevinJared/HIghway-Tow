@@ -1,0 +1,71 @@
+{%extends "registration/base.html"%}
+{% load bootstrap4 %}
+{% block content %}
+<!-- fonts -->
+<link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
+<!-- fonts -->
+<div class="container" style="font-family: 'Raleway', sans-serif; padding-top:120px;">
+  <div class="row">
+    <!-- Empty div -->
+    <div class="col-md-6" style=" background-repeat: no-repeat; background-size: cover; padding-top:50px; text-align: center;">
+      <img src="http://cernosekwrecker.com/communities/3/000/001/790/173//images/10831525.png" alt="" class="img-responsive">
+    </div>
+    <div class="col-md-4">
+      {% if form.errors %}
+      <p> Some Information Might be Incorrect </p>
+      {% endif %}
+      <div class="panel panel-default" style="border:1px solid rgb(231, 231, 231); border-radius:10px;">
+
+        <div class="panel-heading" style="background-color:rgb(231, 231, 231);  padding:10px;">
+          <h5 class="text-center">Sign Up</h5>
+        </div>
+        <div class="panel-body" style="padding:10px;">
+
+          <form action="/accounts/register/" method="post">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            <div class="form-group">
+              <input type="submit" class="block btn btn-primary btn-sm" value="Sign Up">
+            </div>
+
+            <input type="hidden" name="next" value="{{next}}">
+
+          </form>
+          <br>
+          <p>Already Have an Account</p>
+          <br>
+          <a class="btn btn-yellow" href="/accounts/login" style="border:1px solid blueviolet;color:black;">LOGIN</a>
+        </div>
+
+      </div>
+
+    </div>
+    <!-- empty div -->
+    <div class="col-md-2"></div>
+  </div>
+</div>
+<div class="container-fluid" style="height:30px;">
+  <img src="" alt="" width="100%;">
+</div>
+<style>
+  .help-block ul,
+  li {
+    display: none;
+    visibility: hidden;
+    margin-top: 0px;
+  }
+
+  .form-group btn {
+    display: flex;
+    margin: 10px;
+    padding: 10px;
+  }
+
+  .form-text {
+    visibility: hidden;
+    display: none;
+    margin-top: 0px;
+  }
+</style>
+
+{% endblock %}
