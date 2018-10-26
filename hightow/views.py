@@ -2,16 +2,30 @@ from django.shortcuts import render,redirect,get_object_or_404
 from hightow.models import Post, Profile
 from django.shortcuts import redirect
 from django.contrib.auth.models import User
-from .forms import NewPostForm, UserForm, ProfileForm,CommentForm
+from django.http import HttpResponse, Http404,HttpResponseRedirect
+from .forms import NewPostForm, UserForm, ProfileForm,CommentForm,NewsLetterForm
 from django.contrib.auth.decorators import login_required
-from .models import Room
+from .models import Room,NewsLetterRecipients
+from .email import send_welcome_email
 
 
 def index(request):
     user = request.user
     posts = Post.objects.all()
+    if request.method == 'POST':
+        form = NewsLetterForm(request.POST)
+        if form.is_valid():
+            name = form.cleaned_data['your_name']
+            email = form.cleaned_data['email']
 
-    return render(request, 'index.html', locals())
+            recipient = NewsLetterRecipients(name = name,email =email)
+            recipient.save()
+            send_welcome_email(name,email)
+
+            HttpResponseRedirect('index')
+    else:
+        form = NewsLetterForm()
+    return render(request, 'index.html',{"letterForm":form}, locals())
 
 
 def all_rooms(request):
@@ -110,3 +124,13 @@ def search_results(request):
     else:
         message = "You haven't searched for any term"
         return render(request, 'search.html',{"message":message})
+
+def newsletter(request):
+    name = request.POST.get('your_name')
+    email = request.POST.get('email')
+
+    recipient = NewsLetterRecipients(name=name, email=email)
+    recipient.save()
+    send_welcome_email(name, email)
+    data = {'success': 'You have been successfully added to mailing list'}
+    return JsonResponse(data)

@@ -36,7 +36,7 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid" style="padding-top: 70px;background-size: cover;background-repeat: no-repeat; width: 100%; background-image:url(https://ldi-admin-prod.statusnotquo.com/CMSPages/GetFile.aspx?guid=915d249c-1522-4602-b900-7d6a56d51cad)">
+    <div id="section1" class="container-fluid" style="padding-top: 70px;background-size: cover;background-repeat: no-repeat; width: 100%; background-image:url(https://ldi-admin-prod.statusnotquo.com/CMSPages/GetFile.aspx?guid=915d249c-1522-4602-b900-7d6a56d51cad)">
         <div class="container" style="padding-bottom:60px;">
             <div class="row">
                 <div class="col-md-2">
@@ -70,12 +70,19 @@
 
         </div>
     </div>
-    <div class="container">
+    <div class="container" id="section2">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4" style="text-align:center; font-size:38px">
+                <h1><strong style="font-size:20px;text-align:center;">Gallery</strong></h1>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
         <div class="row">
             <div class="col-md-2"></div>
             <div class="col-md-8">
                 <div class="row" style="margin-bottom:10px;">
-                    <h1><strong style="font-size:20px;text-align:center;">Gallery</strong></h1>
+
                 </div>
                 <div id="gallery" class="row" style="margin-bottom:10px; border-top:2px solid rgb(228, 228, 228); padding-top:20px;">
                     <div class="col-md-4" style="margin-bottom:10px;">
@@ -102,6 +109,10 @@
                         <img src="https://131tow.com.au/images/casestudy/category/zre8ap6auk.jpg" alt="" class="img-responsive"
                             width="100%;">
                     </div>
+                    <div class="col-md-12" style="margin-bottom:10px;">
+                        <img src="https://fleetimages.bobitstudios.com/upload/content/_migrated/m-large-tow-truck-1-2.jpg"
+                            alt="" class="img-responsive" width="100%;">
+                    </div>
                 </div>
             </div>
             <div class="col-md-2"></div>
@@ -110,8 +121,8 @@
     </div>
     <div id="testimonials-section" class="container-fluid text-center">
         <div class="container">
-            <div class="">
-                <h1> What they said <strong>about us</strong> </h1>
+            <div style="font-size:38px;color: white;">
+                What they said <strong>about us</strong>
             </div>
             <div class="row">
                 <div class="col-md-8">
@@ -180,6 +191,26 @@
 
                     </div>
                 </div>
+            </div>
+            <div class="container" style="margin-top:20px; margin-bottom:20px; ">
+                <div class="row">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-6">
+                        <div style="padding:60px; background-color: crimson;border-radius:15px; ">
+                            <div style="padding-bottom:20px;color: white; ">
+                                <h4>Subscribe to receive latest news feeds and offers from us</h4>
+                            </div>
+                            <form action="{%url 'index'%}" method="post">
+                                {%csrf_token%}
+
+                                {% bootstrap_form letterForm layout='inline' %}
+                                <input class="block" type="submit" value="Subscribe">
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-md-2"></div>
+                </div>
+
             </div>
         </div>
     </div>

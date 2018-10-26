@@ -61,3 +61,7 @@ class Room(models.Model):
     def __str__(self):
         """Returns human-readable representation of the model instance."""
         return self.name
+
+class NewsLetterRecipients(models.Model):
+    name = models.CharField(max_length = 30)
+    email = models.EmailField()

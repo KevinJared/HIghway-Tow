@@ -11,7 +11,7 @@
                 <div class="col-md-3">
                     <div id="mySidenav" class="sidenav">
                         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                        <a href="/"><i class="glyphicon glyphicon-home"></i> HOME</a>
+                        <a href="/" style="color:black;"><i class="glyphicon glyphicon-home"></i> HOME</a>
                         <li class="dropdown-divider"></li>
                         <a href="#"><i class="glyphicon glyphicon-king"></i> Companies</a>
                         <li class="dropdown-divider"></li>
@@ -41,9 +41,9 @@
         <div class="col-md-4" style="text-align:right;padding-top:10px;">
             <div class="row">
                 <div class="col-md-6" style="text-align: right;">
-                    <a href="" style="padding-right:20px;">About</a>
-                    <a href="" style="padding-right:20px;">Gallery</a>
-                    <a href="" style="">Contact</a>
+                    <a href="#section1" class="js-anchor-link"  style="padding-right:20px;" style="padding-right:20px;">About</a>
+                    <a href="#section2" class="js-anchor-link"  style="padding-right:20px;">Gallery</a>
+                    <a href="#section3" class="js-anchor-link">Contact</a>
                 </div>
                 <div class="col-md-6" style="padding-right: 30px;">
                     {% if user.is_authenticated %}
