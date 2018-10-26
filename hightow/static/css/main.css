@@ -14,6 +14,7 @@
     cursor: pointer;
     text-align: center;
     text-decoration: none;
+    border-radius:8px;
 }
 
 
@@ -111,7 +112,7 @@ footer {
     bottom: 0;
     width: 100%;
     /* Set the fixed height of the footer here */
-    height: 300px;
+    height: 200px;
 }
 
 .footer-icons {
@@ -146,7 +147,7 @@ a:focus {
 }
 
 a:hover {
-    color: rgba(255, 255, 255, 0.6);
+    color: rgb(156, 28, 28);
 }
 
 /* testimonials section */

@@ -27,12 +27,12 @@ def index(request):
         form = NewsLetterForm()
     return render(request, 'index.html',{"letterForm":form}, locals())
 
-
+@login_required(login_url='/accounts/login/')
 def all_rooms(request):
     rooms = Room.objects.all()
     return render(request, 'chat/index.html', {'rooms': rooms})
 
-
+@login_required(login_url='/accounts/login/')
 def room_detail(request, slug):
     room = Room.objects.get(slug=slug)
     return render(request, 'chat/room_detail.html', {'room': room})
@@ -62,8 +62,6 @@ def profile(request,user_id=None):
     user = current_user
     images = Post.objects.filter(user=current_user)
     profile = Profile.objects.all()
-    followers = len(Follow.objects.followers(current_user))
-    following = len(Follow.objects.following(current_user))
     return render(request, 'profile.html', locals())
 
 @login_required
@@ -71,17 +69,10 @@ def userprofile(request, user_id):
     users = User.objects.get(id=user_id)
     profile = Profile.objects.get(user=users)
     images = Post.objects.filter(user=users)
-    followers = len(Follow.objects.followers(users))
-    following = len(Follow.objects.following(users))
     posts = len(Image.objects.filter(user=users))
-    people_following = Follow.objects.following(request.user)
-    return render(request, 'profile/userprofile.html', {"user": users, "profile": profile, "images": images,"followers":followers, "following":following, "posts":posts, "people_following":people_following})
 
-@login_required(login_url='/accounts/login/')
-def follow(request, user_id):
-    users = User.objects.get(id=user_id)
-    follow = Follow.objects.add_follower(request.user, users)
-    return render(request, 'profile.html', {"users": users, "follow":follow})
+    return render(request, 'profile/userprofile.html', {"user": users, "profile": profile, "images": images})
+
 
 @login_required(login_url='/accounts/login')
 def updateprofile(request):
@@ -94,23 +85,6 @@ def updateprofile(request):
 	else:
 			form = ProfileForm()
 	return render(request, 'updateprofile.html',{"form":form })
-
-# @ajax_request
-def comment_on(request,post_id):
-  post = get_object_or_404(Post, pk=post_id)
-  if request.method == 'POST':
-    form = CommentForm(request.POST)
-    if form.is_valid():
-      comment = form.save(commit=False)
-      comment.user = request.user
-      comment.post = post
-      comment.save()
-  return redirect('index')
-
-@login_required(login_url='/accounts/login/')
-def find(request, name):
-    results = Profile.find_profile(name)
-    return render(request, 'search.html', locals())
 
 def search_results(request):
 
